@@ -1,0 +1,65 @@
+<div class="superNav border-bottom py-2 bg-light">
+    <nav class="navbar navbar-expand-lg  sticky-top navbar-light p-3 shadow-sm" style="background-color: violet;">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+      <img
+        src="/nav.png"
+        alt="Logo"
+        width="50"
+        height="50"
+        class="d-inline-block align-text-top"
+      />
+    </a>
+        <a class="navbar-brand" href="/"><i class="fa-solid fa-shop me-2"></i> <strong>World of Fashion</strong></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <ul class="navbar-nav ms-auto "> 
+          <li class="nav-item">
+            {{#if reg}}
+            <i style="margin-left: 20px;font-size: x-large;color:darkorchid;">Hello,{{reg.user}}</i>
+            {{/if}}
+          </li>
+        </ul>
+    
+        <div class="mx-auto my-3 d-lg-none d-sm-block d-xs-block">
+          <div class="input-group">
+            <span class="border-info input-group-text  text-white" style="background-color: darkorchid;"><i class="fa-solid fa-magnifying-glass"></i></span>
+            <input type="text" class="form-control border-info" style="color:#7a7a7a">
+            <button class="btn btn-info text-white">Search</button>
+          </div>
+        </div>
+        <div class=" collapse navbar-collapse" id="navbarNavDropdown">
+          <div class="ms-auto d-none d-lg-block">
+            <div class="input-group">
+              <span class="border-info input-group-text  text-white" style="background-color: darkorchid;"><i class="fa-solid fa-magnifying-glass"></i></span>
+              <input type="text" class="form-control border-info" style="color:#7a7a7a">
+              <button class="btn btn text-white" style="background-color: darkorchid;">Search</button>
+            </div>
+          </div>
+          <ul class="navbar-nav ms-auto ">                        
+              <li class="nav-item">
+                <a class="nav-link mx-2 text-uppercase" href="/order"><i class="fa-solid fa-cart-shopping me-1"></i>My Order</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-2 text-uppercase" href="/cart"><i class="fa-solid fa-circle-user me-1"></i>My Cart</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-2 text-uppercase" href="/faq"><i class="fa-solid fa-circle-user me-1"></i>FAQ</a>
+              </li>
+              {{#if login}}                                       
+               <li class="nav-item">
+                <a class="nav-link mx-2 text-uppercase" href="/logout"><i class="fa-solid fa-cart-shopping me-1"></i>Logout</a>
+              </li>  
+              {{else}}            
+              <li class="nav-item">
+              <a class="nav-link mx-2 text-uppercase" href="/register"><i class="fa-solid fa-cart-shopping me-1"></i>Register</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-2 text-uppercase" href="/login"><i class="fa-solid fa-cart-shopping me-1"></i>Login</a>
+              </li>
+              {{/if}}
+          </ul>
+        </div>
+      </div>
+    </nav>

@@ -1,0 +1,41 @@
+body {
+  padding: 0px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+label {
+  display: inline-block;
+  width: 110px;
+  color: #777777;
+}
+
+.faq-list {
+  list-style: none;
+  padding: 0;
+}
+
+.faq-list li {
+  margin-bottom: 20px;
+}
+
+.faq-list h2 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+.faq-list p {
+  font-size: 16px;
+  color: #666;
+  margin: 10px 0;
+}
+
+.faq-list li::before {
+  font-weight: bold;
+}
+

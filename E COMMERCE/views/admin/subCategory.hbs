@@ -1,0 +1,82 @@
+<div class="container-fluid">
+  <div class="row flex-nowrap" style="background-color: #fde3e9;">
+    <div
+      class="col-auto col-md-3 col-xl-2 px-sm-2 px-0"
+      style="background-color: #e3f2fd;"
+    >
+      <div
+        class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100"
+      >
+        <ul
+          class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
+          id="menu"
+        >
+          <li class="nav-item">
+            <a href="/admin/addProduct" class="nav-link align-middle px-0">
+              <i class="fs-4 bi-house"></i>
+              <span class="ms-1 d-none d-sm-inline"><h5>Category</h5></span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/admin/subCategory" class="nav-link align-middle px-0">
+              <i class="fs-4 bi-house"></i>
+              <span class="ms-1 d-none d-sm-inline"><h5>Sub Category</h5></span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/admin/commodity" class="nav-link align-middle px-0">
+              <i class="fs-4 bi-house"></i>
+              <span class="ms-1 d-none d-sm-inline"><h5>Commodity</h5></span>
+            </a>
+          </li>
+        </ul>
+        <hr />
+      </div>
+    </div>
+    <div class="col py-3">
+        <h1>Add Sub Category</h1>
+
+        <form method="post" action="/admin/subCategory" enctype="multipart/form-data" >
+
+          <label style="font-size: large;width:150px;">Parent_Category</label>
+          <select name="parent" style="width:250px">
+            <option>Select</option>
+              {{#each categoryInfo}}
+              <option placeholder="click here" value="{{this._id}}">{{this.Category}}</option>
+              {{/each}}
+          </select><br /><br />
+          
+          <label style="font-size:large;width:150px;">Sub_Category</label>&nbsp;<input
+            type="text"
+            name="subcat"
+            placeholder="Enter sub-category"
+            style="width:250px"
+          /><br /><br />
+
+          <input type="submit" value="Submit" style="font-size: large;">
+
+        </form>
+        <br /><br />
+        <h1>View Sub Category</h1>
+
+        <table style="font-size: medium;width:100%;">
+
+          <tr>
+              <th>Parent_Category</th>
+              <th>Sub_Category</th>
+
+              <th colspan="2">Action</th>
+          </tr>
+
+          {{#each subcategoryInfo}}
+          <tr>
+            <td>{{this.newdata.Category}}</td>
+            <td>{{this.SubCategory}}</td>
+            <td><a href="/admin/editsubcategory/{{this._id}}" type="submit">Edit</a></td>
+            <td><a href="/admin/subCategory/{{this._id}}" type="submit">Delete</a></td>
+          </tr>
+          {{/each}}
+          
+        </table>
+      <br><br><br>
+    </div>

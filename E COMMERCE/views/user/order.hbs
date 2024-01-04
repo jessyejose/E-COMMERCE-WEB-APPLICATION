@@ -1,0 +1,25 @@
+{{#if Status}}
+<img src="order.png" alt="empty" width="100%" height="80%">
+{{else}}
+<h1 style=" margin-left: 90px;">My Order</h1>
+<div class="container">
+    <table style="width: 100%;" class="table mt-5" >
+        <thead style="width: 100%;color: rgb(200, 12, 200);font-size:larger;">
+            <tr style="width: 100%;">               
+                <th style="width: 40%">Product</th>
+                <th style="width:40%">Image</th>
+                <th style="width:20%">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each user}}
+            <tr style="width: 100%;">
+                <td>{{this.commoditydata.Product}}</td>
+                <td><img style="width: 100px;height:100px;" src="/images/{{this.commoditydata.Imagenew}}" alt=""></td>
+                <td Price="{{this.commoditydata.Price}}">{{this.commoditydata.Price}}</td>        
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+{{/if}}

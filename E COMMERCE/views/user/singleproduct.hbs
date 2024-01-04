@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <img
+          src="/images/{{updateInfo.Imagenew}}"
+          alt="hello"
+          width="500"
+          height="500"
+        />
+      </div>
+      <div class="col-md-6">
+        <div class="card" style="height: 500px;">
+            <div class="card-body">
+                <br><br><br><br><br><br>
+                <h5 class="card-title">Product Name:{{updateInfo.Product}}</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">Price: {{updateInfo.Price}}</h6>
+                <p class="card-text"><b>Description:</b>{{updateInfo.Description}}</p>
+                <a href="/card/{{updateInfo._id}}" class="card-link btn btn-primary">Add to Cart</a>
+                <a href="#" class="card-link btn btn-primary">Buy Now</a>
+                <a href="/" class="card-link btn btn-primary">Back</a>
+            </div>
+        </div>
+      </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{!-- <script>
+    // Add a click event handler to the anchor tag
+    document.querySelector('.card-link.btn').addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent the default anchor click action
+
+        // Create a submit button dynamically
+        var submitButton = document.createElement('button');
+        submitButton.type = 'submit';
+        submitButton.className = 'btn btn-primary';
+        submitButton.textContent = 'Add to Cart';
+
+        // Find the parent form element and append the submit button to it
+        var form = this.closest('form'); // Assuming it's within a form
+        if (form) {
+            form.appendChild(submitButton);
+
+            // Trigger a click event on the submit button to submit the form
+            submitButton.click();
+        }
+    });
+</script> --}}

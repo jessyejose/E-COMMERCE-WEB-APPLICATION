@@ -1,0 +1,67 @@
+<div class="container-fluid">
+  <div class="row flex-nowrap" style="background-color: #fde3e9;">
+    <div
+      class="col-auto col-md-3 col-xl-2 px-sm-2 px-0"
+      style="background-color: #e3f2fd;"
+    >
+      <div
+        class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100"
+      >
+        <ul
+          class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
+          id="menu"
+        >
+          <li class="nav-item">
+            <a href="/admin/addProduct" class="nav-link align-middle px-0">
+              <i class="fs-4 bi-house"></i>
+              <span class="ms-1 d-none d-sm-inline"><h5>Category</h5></span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/admin/subCategory" class="nav-link align-middle px-0">
+              <i class="fs-4 bi-house"></i>
+              <span class="ms-1 d-none d-sm-inline"><h5>Sub Category</h5></span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/admin/commodity" class="nav-link align-middle px-0">
+              <i class="fs-4 bi-house"></i>
+              <span class="ms-1 d-none d-sm-inline"><h5>Commodity</h5></span>
+            </a>
+          </li>
+        </ul>
+        <hr />
+      </div>
+    </div>
+    <div class="col py-3">
+      <h1>Edit Sub Category</h1>
+      <form method="post" action="" enctype="multipart/form-data" >      
+        <label style="font-size: large;">Parent_Category</label><br>
+        <select name="parent" style="width:100%;"  value="" id="cate">
+        <option>Select</option>
+        {{#each categoryInfo}}
+        <option placeholder="click here" value="{{this._id}}">{{this.Category}}</option>
+        {{/each}}
+        </select>
+        <input type="hidden" value="{{updateInfo.Parent}}" id="hidden_info">       <br><br><br>
+        <label style="font-size:large;">Sub_Category</label><br><input
+        type="text"
+        name="subcat"
+        placeholder="Enter sub-category"
+        style="width:100%;"
+        value="{{updateInfo.SubCategory}}"
+        /><br /><br />
+        <input type="submit" value="Submit" style="font-size: large;">
+      </form>
+      <script>
+      var selectcate=document.getElementById('cate');
+      var hiddenValue=document.getElementById("hidden_info").value;
+      for(var i=0;i<selectcate.options.length;i++){
+          var option=selectcate.options[i];
+          if(option.value==hiddenValue){
+              option.selected=true;
+              break;
+          }
+      }
+      </script>
+    </div>

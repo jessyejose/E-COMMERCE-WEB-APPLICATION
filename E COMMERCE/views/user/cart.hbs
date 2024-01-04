@@ -1,0 +1,59 @@
+{{#if Status}}
+<img src="cart.png" alt="empty" width="100%" height="100%">
+{{else}}
+<h1 style=" margin-left: 90px;">My Cart</h1>
+<div class="container">
+    <table style="width: 100%;" class="table mt-5" >
+        <thead style="width: 100%;color: rgb(200, 12, 200);font-size:larger;">
+            <tr style="width: 100%;">                
+                <th style="width:29%">Product</th>
+                <th style="width:29%">Image</th>
+                <th style="width:30%">Price</th>
+                <th style="width:12%"></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each user}}
+            <tr style="width: 100%;">              
+                <td>{{this.commoditydata.Product}}</td>
+                <td><img style="width: 100px;height:100px;" src="/images/{{this.commoditydata.Imagenew}}" alt=""></td>
+                <td Price="{{this.commoditydata.Price}}">{{this.commoditydata.Price}}</td>            
+                <td><a href="/cart/{{this._id}}" class="card-link btn btn-danger">Remove</a></td>        
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    <div class="row">
+        <div class="col-sm-10">
+            <h2>Total:<span id="total"></span></h2>
+        </div>
+        <div class="col-sm-2">
+            <form action="/cart" method="post">
+            <input type="submit" value="Proceed to pay" style="background-color: rgb(47, 165, 47);width:125px;height:45px;border-radius:10% 10%">
+            </form>
+        </div>
+    </div>
+</div>
+{{/if}}
+<script>
+
+    const array = document.querySelectorAll('td[Price]');
+    let sum = 0;
+    array.forEach((values) => {
+        const amount = Number(values.getAttribute('Price'));
+        sum += amount;
+    });
+    document.getElementById('total').textContent = sum;
+
+</script>
+
+
+
+
+
+
+
+
+
+
+

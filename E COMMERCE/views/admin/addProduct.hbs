@@ -1,0 +1,79 @@
+<div class="container-fluid">
+  <div class="row flex-nowrap" style="background-color: #fde3e9;">
+    <div
+      class="col-auto col-md-3 col-xl-2 px-sm-2 px-0"
+      style="background-color: #e3f2fd;"
+    >
+      <div
+        class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100"
+      >
+        <ul
+          class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
+          id="menu"
+        >
+          <li class="nav-item">
+            <a href="/admin/addProduct" class="nav-link align-middle px-0">
+              <i class="fs-4 bi-house"></i>
+              <span class="ms-1 d-none d-sm-inline"><h5>Category</h5></span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/admin/subCategory" class="nav-link align-middle px-0">
+              <i class="fs-4 bi-house"></i>
+              <span class="ms-1 d-none d-sm-inline"><h5>Sub Category</h5></span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/admin/commodity" class="nav-link align-middle px-0">
+              <i class="fs-4 bi-house"></i>
+              <span class="ms-1 d-none d-sm-inline"><h5>Commodity</h5></span>
+            </a>
+          </li>
+        </ul>
+        <hr />
+      </div>
+    </div>
+    <div class="col py-3">
+      <h1>ADD PRODUCT</h1>
+      <form method="post" action="/admin/addProduct" enctype="multipart/form-data">
+        <label style="font-size: larger;">Category</label>&nbsp;<input
+          type="text"
+          name="category"
+          placeholder="Enter Category" style="width:250px"
+        /><br /><br />
+
+        <label style="font-size:larger;">Description</label>
+        <input type="text" name="desp" placeholder="Enter Description" style="width:250px"/><br /><br />
+
+        <label style="font-size: larger;">Image</label>
+        <input type="file" name="image"  style="width:250px"/><br /><br />
+
+        <input type="submit" value="ADD" style="font-size: large;">
+
+      </form>
+      <br><br><br>
+      <h2>View Category</h2>
+      <table style="font-size: medium;width:100%;">
+
+        <tr>
+            <th>Category</th>
+            <th>Description</th>
+            <th>Image</th>
+            <th colspan="2">Action</th>
+        </tr>
+
+        {{#each addedInfo}}
+        <tr>
+          <td>{{Category}}</td>
+          <td>{{Description}}</td>
+          <td><img src="/images/{{ImageAdd}}" alt="error" width="100" height="100" /></td>
+          <td><a href="/admin/editProduct/{{_id}}" type="submit">Edit</a></td>
+          <td><a href="/admin/addProduct/{{_id}}" type="submit">Delete</a></td>
+        </tr>
+        {{/each}}
+        
+      </table>
+    </div>
+  </div>
+</div>
+

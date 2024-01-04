@@ -1,0 +1,143 @@
+<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" aria-label="Slide 5"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="2000">
+      <img src="/ca.jpg" class="d-block w-100 h-75" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h2>Women's Fashion</h2>
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src="/men.avif" class="d-block w-100 h-75" alt="...">
+      {{!-- <div classvscode-file://vscode-app/c:/Users/jessy/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-sandbox/workbench/workbench.html="carousel-caption d-none d-md-block"> --}}
+		<div class="carousel-caption d-none d-md-block">
+	    <h2>Men's Fashion</h2>
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src="/ea.webp" class="d-block w-100 h-75" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h2>Electronic Accessories</h2>
+      </div>
+    </div>
+    <div class="carousel-item"  data-bs-interval="2000">
+      <img src="/wa.webp" class="d-block w-100 h-75" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h2>Women's Accessories</h2>
+      </div>
+    </div>
+    <div class="carousel-item"  data-bs-interval="2000">
+      <img src="/ma.jpg" class="d-block w-100 h-75" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h2>Men's Accessories</h2>
+      </div>
+    </div>
+    
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+<div>
+  <h1 style=" margin-left: 90px;">NEW PRODUCTS</h1>
+  <div class="container">
+    <div class="row">
+      {{#each commodityInfo}}
+      <div class="col-sm-4">
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="images/{{Imagenew}}" alt="Card image" width="100px" height="300px">
+            <div class="card-body">
+              <h4 class="card-title">{{Product}}</h4>
+              <h6 class="card-title">Rs {{Price}}</h6>
+              <p class="card-text">{{Description}}</p>
+              {{!-- <a href="/user/singleproduct" class="btn btn-primary">Click to view</a> --}}
+              <a href="/singleproduct/{{_id}}" class="btn btn-primary">Click to view</a>
+            </div>
+          </div>
+        </div>
+      {{/each}}       
+    </div>
+  </div>
+</div>
+
+<br><br>
+
+<div>
+  <h1 style=" margin-left: 90px;">All CATEGORY</h1>
+  <div class="container">
+    <div class="row">
+      {{#each categoryInfo}}
+        <div class="col-sm-4">
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="images/{{ImageAdd}}" alt="Card image" width="100px" height="300px">
+              <div class="card-body">
+                <h4 class="card-title">{{Category}}</h4>
+                <p class="card-text">{{Description}}</p>
+                <a href="/allcategory/{{_id}}" class="btn btn-primary">Click to view</a>
+              </div>
+            </div>
+        </div> 
+      {{/each}}      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{!-- <button id="myButton">Go to Page</button>
+
+<script>
+  // Add a click event listener to the button
+  document.getElementById("myButton").addEventListener("click", function() {
+    // Specify the URL you want to navigate to
+    var destinationURL = "/register"; // Replace with your desired URL
+    
+    // Use the window.location object to navigate to the specified URL
+    window.location.href = destinationURL;
+  });
+</script> --}}
+
+
+{{!-- 
+<a href="/allcategory/{{_id}}" class="btn btn-primary" id="myLink">Click to view</a>
+
+<button class="btn btn-primary" id="myButton">Click to view</button>
+
+<script>
+  // Get a reference to the <a> element and the <button> element
+  var linkElement = document.getElementById("myLink");
+  var buttonElement = document.getElementById("myButton");
+
+  // Add a click event listener to the button
+  buttonElement.addEventListener("click", function() {
+    // Simulate a click on the hidden <a> element
+    linkElement.click();
+  });
+</script> --}}
+
+

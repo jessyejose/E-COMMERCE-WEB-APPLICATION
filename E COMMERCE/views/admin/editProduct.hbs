@@ -1,0 +1,60 @@
+<div class="container-fluid">
+  <div class="row flex-nowrap" style="background-color: #fde3e9;">
+    <div
+      class="col-auto col-md-3 col-xl-2 px-sm-2 px-0"
+      style="background-color: #e3f2fd;"
+    >
+      <div
+        class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100"
+      >
+        <ul
+          class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
+          id="menu"
+        >
+          <li class="nav-item">
+            <a href="/admin/addProduct" class="nav-link align-middle px-0">
+              <i class="fs-4 bi-house"></i>
+              <span class="ms-1 d-none d-sm-inline"><h5>Category</h5></span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/admin/subCategory" class="nav-link align-middle px-0">
+              <i class="fs-4 bi-house"></i>
+              <span class="ms-1 d-none d-sm-inline"><h5>Sub Category</h5></span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/admin/commodity" class="nav-link align-middle px-0">
+              <i class="fs-4 bi-house"></i>
+              <span class="ms-1 d-none d-sm-inline"><h5>Commodity</h5></span>
+            </a>
+          </li>
+        </ul>
+        <hr />
+      </div>
+    </div>
+    <div class="col py-3">
+      <h1>EDIT PRODUCT</h1>
+      <form method="post" action="" enctype="multipart/form-data" value="{{result}}">
+        <label style="font-size: larger;">Category</label><input
+            type="text"
+            name="category"
+            placeholder="Enter Category"
+            value="{{result.Category}}"
+        /><br /><br />
+
+        <label style="font-size:larger;">Description</label><input
+            type="text"
+            name="desp"
+            placeholder="Enter Description"
+            value="{{result.Description}}"
+        /><br /><br />
+
+        <label style="font-size: larger;">Image</label>
+        <input type="file" name="image" value="{{result.ImageAdd}}"/>
+        <img src="/images/{{result.ImageAdd}}" alt="Hii" width="100" height="100" /><br /><br />
+        
+        <input type="submit" value="Update" style="font-size: large;">
+
+      </form>
+    </div>

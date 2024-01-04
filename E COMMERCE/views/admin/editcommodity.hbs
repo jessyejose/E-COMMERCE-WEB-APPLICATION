@@ -1,0 +1,135 @@
+<div class="container-fluid">
+  <div class="row flex-nowrap" style="background-color: #fde3e9;">
+    <div
+      class="col-auto col-md-3 col-xl-2 px-sm-2 px-0"
+      style="background-color: #e3f2fd;"
+    >
+      <div
+        class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100"
+      >
+        <ul
+          class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
+          id="menu"
+        >
+          <li class="nav-item">
+            <a href="/admin/addProduct" class="nav-link align-middle px-0">
+              <i class="fs-4 bi-house"></i>
+              <span class="ms-1 d-none d-sm-inline"><h5>Category</h5></span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/admin/subCategory" class="nav-link align-middle px-0">
+              <i class="fs-4 bi-house"></i>
+              <span class="ms-1 d-none d-sm-inline"><h5>Sub Category</h5></span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/admin/commodity" class="nav-link align-middle px-0">
+              <i class="fs-4 bi-house"></i>
+              <span class="ms-1 d-none d-sm-inline"><h5>Commodity</h5></span>
+            </a>
+          </li>
+        </ul>
+        <hr />
+      </div>
+    </div>
+    <div class="col py-3">
+      <h1>EDIT COMMODITY</h1>
+      <form method="post" action="" enctype="multipart/form-data">
+        <label style="font-size: large;">Category</label>
+        <select name="categories" style="width:250px" value="" id="cat">
+          <option>Select</option>
+          {{#each categoryInfo}}
+            <option
+              placeholder="click here"
+              value="{{this._id}}"
+            >{{this.Category}}</option>
+          {{/each}}
+        </select>
+        <input
+          type="hidden"
+          value="{{updateInfo.Categories}}"
+          id="hidden_info"
+        />
+        <br /><br />
+
+        <label style="font-size: large;">Sub Category</label>
+        <select name="subcategory" style="width:250px" value="" id="sub">
+          <option>Select</option>
+          {{#each subcategoryInfo}}
+            <option
+              placeholder="click here"
+              value="{{this._id}}"
+            >{{this.SubCategory}}</option>
+          {{/each}}
+        </select>
+        <input
+          type="hidden"
+          value="{{updateInfo.SubCategory}}"
+          id="hiddeninfo"
+        />
+        <br /><br />
+
+        <label style="font-size:large;">Product</label>&nbsp;<input
+          type="text"
+          name="prod"
+          style="width:250px;"
+          value="{{updateInfo.Product}}"
+        /><br /><br />
+
+        <label style="font-size:large;">Quantity</label>&nbsp;<input
+          type="text"
+          name="quantity"
+          style="width:250px;"
+          value="{{updateInfo.Quantity}}"
+        /><br /><br />
+
+        <label style="font-size:large;">Price</label>&nbsp;<input
+          type="text"
+          name="price"
+          style="width:250px;"
+          value="{{updateInfo.Price}}"
+        /><br /><br />
+
+        <label style="font-size:large;">Description</label>&nbsp;<input
+          type="text"
+          name="desc"
+          style="width:250px;"
+          value="{{updateInfo.Description}}"
+        /><br /><br />
+
+        <label style="font-size: larger;">Image</label>
+        <input type="file" name="imag" value="{{updateInfo.Imagenew}}" />
+        <img
+          src="/images/{{updateInfo.Imagenew}}"
+          alt="Hii"
+          width="100"
+          height="100"
+        /><br /><br />
+
+        <input type="submit" value="Submit" style="font-size: large;" />
+        
+      </form>
+      <script>
+        var selectcate=document.getElementById('cat'); 
+		var hiddenValue=document.getElementById("hidden_info").value;
+		 for(var i=0;i<selectcate.options.length;i++){
+			 var option=selectcate.options[i];
+        	if(option.value==hiddenValue){ 
+				option.selected=true;
+				 break; 	
+			} 
+		} 
+		var selectsub=document.getElementById('sub'); 
+		var hiddenvalue=document.getElementById("hiddeninfo").value; 
+		for(var i=0;i<selectsub.options.length;i++){ 
+			var option=selectsub.options[i];
+        	if(option.value==hiddenvalue){ 
+				option.selected=true;
+				 break;
+		    } 
+		}
+      </script>
+    </div>
+  </div>
+</div>
